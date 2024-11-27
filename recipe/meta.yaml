@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  https://theory.cm.utexas.edu/henkelman/code/bader/download/bader.tar.gz
+  url: https://theory.cm.utexas.edu/henkelman/code/bader/download/bader.tar.gz
   sha256: 8dcc32a17b8caf11622347ed89924edb6cebbee63bfd7bf30e752f0fb402aa25
   patches:
     - make.patch
