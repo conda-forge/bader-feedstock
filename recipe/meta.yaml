@@ -1,23 +1,24 @@
 {% set name = "bader" %}
-{% set version = "1.0.4" %}
+{% set version = "1.0.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: http://theory.cm.utexas.edu/henkelman/code/bader/download/bader.tar.gz
-  sha256: f20a0a021157d911bea06666911763b737c4ff38b39e793b8560f940fe391b8e
+  url: https://theory.cm.utexas.edu/henkelman/code/bader/download/bader.tar.gz
+  sha256: 8dcc32a17b8caf11622347ed89924edb6cebbee63bfd7bf30e752f0fb402aa25
   patches:
     - make.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('fortran') }}
+    - {{ stdlib("c") }}
     - make
   host:
   run:
