@@ -12,7 +12,7 @@ source:
     - make.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -39,8 +39,8 @@ about:
     densities in the VASP CHGCAR format, or the Gaussian CUBE format. The
     program outputs the total charge associated with each atom, and the 
     zero flux surfaces defining the Bader volumes.
-  doc_url: http://theory.cm.utexas.edu/henkelman/code/bader/
-  dev_url: http://theory.cm.utexas.edu/henkelman/code/bader/
+  doc_url: https://theory.cm.utexas.edu/henkelman/code/bader/
+  dev_url: https://theory.cm.utexas.edu/henkelman/code/bader/
 
 extra:
   recipe-maintainers:
