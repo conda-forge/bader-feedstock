@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: bader
+  version: "1.0.5"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://theory.cm.utexas.edu/henkelman/code/bader/download/bader.tar.gz
+  sha256: 8dcc32a17b8caf11622347ed89924edb6cebbee63bfd7bf30e752f0fb402aa25
+  patches:
+    - make.patch
+
+build:
+  number: 2
+  skip: win
+
+requirements:
+  build:
+    - ${{ compiler('fortran') }}
+    - ${{ stdlib("c") }}
+    - make
+  host:
+  run:
+
+tests:
+  - script:
+      - bader -h
+
+about:
+  license: GPL-3.0-or-later
+  license_file: LICENSE.txt
+  summary: Bader Charge Analysis
+  description: |
+    We have developed a fast algorithm for doing Bader's analysis on a
+    charge density grid. The program (see below) can read in charge
+    densities in the VASP CHGCAR format, or the Gaussian CUBE format. The
+    program outputs the total charge associated with each atom, and the
+    zero flux surfaces defining the Bader volumes.
+  homepage: http://theory.cm.utexas.edu/henkelman/code/bader/
+  repository: https://theory.cm.utexas.edu/henkelman/code/bader/
+  documentation: https://theory.cm.utexas.edu/henkelman/code/bader/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen

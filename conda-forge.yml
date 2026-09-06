@@ -10,3 +10,5 @@ conda_build:
 provider:
   linux_aarch64: default
   osx_arm64: default
+conda_install_tool: pixi
+conda_build_tool: rattler-build
